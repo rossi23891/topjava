@@ -55,9 +55,9 @@ public class UserMealsUtil {
 
             LocalTime lt = userMeal.getDateTime().toLocalTime();
             if(TimeUtil.isBetween(lt,startTime,endTime)){
-                boolean exceed = caloriesPerDayTotal.get(userMeal.getDateTime().toLocalDate()) > caloriesPerDay;
+                boolean isExceed = caloriesPerDayTotal.get(userMeal.getDateTime().toLocalDate()) > caloriesPerDay;
                 filteredList.add(new UserMealWithExceed(userMeal.getDateTime(),userMeal.getDescription(),
-                        userMeal.getCalories(),exceed));
+                        userMeal.getCalories(),isExceed));
             }
         }
 
